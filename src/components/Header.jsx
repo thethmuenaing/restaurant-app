@@ -1,7 +1,7 @@
 import React from "react";
-import Logo from "./images/logo.png";
+import Logo from "../images/logo.png";
 import { MdShoppingBasket } from "react-icons/md";
-import Avatar from "./images/avatar.png";
+import Avatar from "../images/avatar.png";
 
 const Header = () => {
 	return (
