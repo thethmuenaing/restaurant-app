@@ -3,6 +3,8 @@ import Logo from "../images/logo.png";
 import { MdShoppingBasket } from "react-icons/md";
 import Avatar from "../images/avatar.png";
 
+import { motion } from "framer-motion";
+
 const Header = () => {
 	return (
 		<header className="fixed z-50 w-screen p-6 px-16">
@@ -35,9 +37,10 @@ const Header = () => {
 						</div>
 					</div>
 
-					<img
+					<motion.img
+						whileTap={{ scale: 0.6 }}
 						src={Avatar}
-						className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl"
+						className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer"
 						alt="userProkfile"
 					/>
 				</div>
