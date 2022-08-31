@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import { MdFastfood, MdCloudUpload, MdDelete } from "react-icons/md";
+import {
+	MdFastfood,
+	MdCloudUpload,
+	MdDelete,
+	MdFoodBank,
+} from "react-icons/md";
 import { categories } from "../utils/data";
 import Loader from "./Loader";
 
@@ -32,7 +37,7 @@ const CreateContainer = () => {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
-						className={`w-full p-2 rounded-lg text-center text-lg font-semibold ${
+						className={`w-full p-2 rounded-lg text-center text-lg ${
 							alertStatus === "danger"
 								? "bg-red-400 text-red-800"
 								: "bg-emerald-400 text-emerald-800"
@@ -124,6 +129,19 @@ const CreateContainer = () => {
 							)}
 						</>
 					)}
+				</div>
+
+				<div className="w-full flex flex-col md:flex-row items-center gap-3">
+					<div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+						<MdFoodBank className="text-gray-700 text-2xl" />
+						<input
+							type="text"
+							required
+							placeholder="Calories"
+							className="w-full h-full text-lg bg-transparent
+						outline-none border-none placeholder:text-gray-400 "
+						/>
+					</div>
 				</div>
 			</div>
 		</div>
