@@ -139,7 +139,7 @@ const CreateContainer = () => {
 							required
 							placeholder="Calories"
 							className="w-full h-full text-lg bg-transparent
-						outline-none border-none placeholder:text-gray-400 "
+						outline-none border-none placeholder:text-gray-400 text-textColor"
 						/>
 					</div>
 				</div>
