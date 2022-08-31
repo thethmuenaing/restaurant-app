@@ -6,6 +6,7 @@ import {
 	MdCloudUpload,
 	MdDelete,
 	MdFoodBank,
+	MdAttachMoney,
 } from "react-icons/md";
 import { categories } from "../utils/data";
 import Loader from "./Loader";
@@ -137,6 +138,8 @@ const CreateContainer = () => {
 						<input
 							type="text"
 							required
+							value={calories}
+							onChange={(e) => setCalories(e.target.value)}
 							placeholder="Calories"
 							className="w-full h-full text-lg bg-transparent
 						outline-none border-none placeholder:text-gray-400 text-textColor"
@@ -144,10 +147,12 @@ const CreateContainer = () => {
 					</div>
 
 					<div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-						<MdFoodBank className="text-gray-700 text-2xl" />
+						<MdAttachMoney className="text-gray-700 text-2xl" />
 						<input
 							type="text"
 							required
+							value={price}
+							onChange={(e) => setPrice(e.target.value)}
 							placeholder="Price"
 							className="w-full h-full text-lg bg-transparent
 						outline-none border-none placeholder:text-gray-400 text-textColor"
