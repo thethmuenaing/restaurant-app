@@ -142,6 +142,17 @@ const CreateContainer = () => {
 						outline-none border-none placeholder:text-gray-400 text-textColor"
 						/>
 					</div>
+
+					<div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
+						<MdFoodBank className="text-gray-700 text-2xl" />
+						<input
+							type="text"
+							required
+							placeholder="Price"
+							className="w-full h-full text-lg bg-transparent
+						outline-none border-none placeholder:text-gray-400 text-textColor"
+						/>
+					</div>
 				</div>
 			</div>
 		</div>
