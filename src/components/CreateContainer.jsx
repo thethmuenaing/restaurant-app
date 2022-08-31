@@ -10,6 +10,8 @@ import {
 } from "react-icons/md";
 import { categories } from "../utils/data";
 import Loader from "./Loader";
+import { storage } from "../firebase.config";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 const CreateContainer = () => {
 	const [title, setTitle] = useState("");
@@ -20,9 +22,46 @@ const CreateContainer = () => {
 	const [fields, setFields] = useState(false);
 	const [alertStatus, setAlertStatus] = useState("danger");
 	const [msg, setMsg] = useState(null);
-	const [loading, setLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
-	const uploadImage = () => {};
+	const uploadImage = (e) => {
+		setIsLoading(true);
+		const imageFile = e.target.files[0];
+		console.log(imageFile);
+		const storageRef = ref(storage, `images/${Date.now()}-${imageFile.name}`);
+		const uploadTask = uploadBytesResumable(storageRef, imageFile);
+
+		uploadTask.on(
+			"state_changed",
+			(snapshot) => {
+				const uploadProgress =
+					(snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+				console.log("Upload is " + uploadProgress + "% done");
+			},
+			(error) => {
+				console.log(error);
+				setFields(true);
+				setMsg("Error while uploading : Try Again ");
+				setAlertStatus("danger");
+				setTimeout(() => {
+					setFields(false);
+					setIsLoading(false);
+				}, 4000);
+			},
+			() => {
+				getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+					setImageAsset(downloadURL);
+					setIsLoading(false);
+					setFields(true);
+					setMsg("Image uploaded successfully");
+					setAlertStatus("success");
+					setTimeout(() => {
+						setFields(false);
+					}, 4000);
+				});
+			}
+		);
+	};
 
 	const deleteImage = () => {};
 
@@ -88,7 +127,7 @@ const CreateContainer = () => {
 					className="group flex justify-center items-center flex-col border-2 border-dotted
 				border-gray-300 w-full h-225 md:h-420 cursor-pointer rounded-lg"
 				>
-					{loading ? (
+					{isLoading ? (
 						<Loader />
 					) : (
 						<>
