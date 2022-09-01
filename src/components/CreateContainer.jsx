@@ -94,6 +94,16 @@ const CreateContainer = () => {
 					setFields(false);
 					setIsLoading(false);
 				}, 4000);
+			} else {
+				const data = {
+					id: `${Date.now()}`,
+					title: title,
+					imageURL: imageAsset,
+					categort: category,
+					calories: calories,
+					qty: 1,
+					price: price,
+				};
 			}
 		} catch (error) {
 			console.log(error);
