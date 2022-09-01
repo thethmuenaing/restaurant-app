@@ -17,6 +17,7 @@ import {
 	ref,
 	uploadBytesResumable,
 } from "firebase/storage";
+import { saveItem } from "../utils/firebaseFunctions";
 
 const CreateContainer = () => {
 	const [title, setTitle] = useState("");
@@ -59,6 +60,7 @@ const CreateContainer = () => {
 					setIsLoading(false);
 					setFields(true);
 					setMsg("Image uploaded successfully");
+
 					setAlertStatus("success");
 					setTimeout(() => {
 						setFields(false);
@@ -104,6 +106,16 @@ const CreateContainer = () => {
 					qty: 1,
 					price: price,
 				};
+
+				saveItem(data);
+				setIsLoading(false);
+				setFields(true);
+				setMsg("Data Upload successfully");
+				clearData();
+				setAlertStatus("success");
+				setTimeout(() => {
+					setFields(false);
+				}, 400);
 			}
 		} catch (error) {
 			console.log(error);
@@ -115,6 +127,14 @@ const CreateContainer = () => {
 				setIsLoading(false);
 			}, 4000);
 		}
+	};
+
+	const clearData = () => {
+		setTitle("");
+		setImageAsset(null);
+		setCalories("");
+		setPrice("");
+		setCalories("Select Category");
 	};
 
 	return (
