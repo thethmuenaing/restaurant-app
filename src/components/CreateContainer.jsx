@@ -83,7 +83,29 @@ const CreateContainer = () => {
 		});
 	};
 
-	const saveDetails = () => {};
+	const saveDetails = () => {
+		setIsLoading(true);
+		try {
+			if (!title || !category || !imageAsset || !categories || !price) {
+				setFields(true);
+				setMsg("required fields can't be empty");
+				setAlertStatus("danger");
+				setTimeout(() => {
+					setFields(false);
+					setIsLoading(false);
+				}, 4000);
+			}
+		} catch (error) {
+			console.log(error);
+			setFields(true);
+			setMsg("Error while uploading : Try Again ");
+			setAlertStatus("danger");
+			setTimeout(() => {
+				setFields(false);
+				setIsLoading(false);
+			}, 4000);
+		}
+	};
 
 	return (
 		<div className="w-full min-h-screen flex justify-center items-center">
