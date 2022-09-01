@@ -11,7 +11,12 @@ import {
 import { categories } from "../utils/data";
 import Loader from "./Loader";
 import { storage } from "../firebase.config";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import {
+	deleteObject,
+	getDownloadURL,
+	ref,
+	uploadBytesResumable,
+} from "firebase/storage";
 
 const CreateContainer = () => {
 	const [title, setTitle] = useState("");
@@ -63,7 +68,20 @@ const CreateContainer = () => {
 		);
 	};
 
-	const deleteImage = () => {};
+	const deleteImage = () => {
+		setIsLoading(true);
+		const deleteRef = ref(storage, imageAsset);
+		deleteObject(deleteRef).then(() => {
+			setImageAsset(null);
+			setIsLoading(false);
+			setFields(true);
+			setMsg("Image deleted successfully");
+			setAlertStatus("success");
+			setTimeout(() => {
+				setFields(false);
+			}, 4000);
+		});
+	};
 
 	const saveDetails = () => {};
 
