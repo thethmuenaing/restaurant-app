@@ -37,7 +37,7 @@ const MainContainer = () => {
 						</motion.div>
 					</div>
 				</div>
-				<RowContainer />
+				<RowContainer flag={true} />
 			</section>
 		</div>
 	);
