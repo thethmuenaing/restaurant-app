@@ -2,7 +2,8 @@ import React from "react";
 import { MdShoppingBasket } from "react-icons/md";
 import { motion } from "framer-motion";
 
-const RowContainer = ({ flag }) => {
+const RowContainer = ({ flag, data }) => {
+	console.log(data);
 	return (
 		<div
 			className={`w-full my-12  ${
@@ -16,7 +17,7 @@ const RowContainer = ({ flag }) => {
 				<div className="w-full flex items-center justify-between">
 					<motion.img
 						whileHover={{ scale: 1.2 }}
-						src="https://firebasestorage.googleapis.com/v0/b/restaurantapp-5a085.appspot.com/o/images%2F1662290617284-i6.png?alt=media&token=ad1d2b21-dec6-4cf2-bcac-f66d24fefa63"
+						src="https://firebasestorage.googleapis.com/v0/b/restaurantapp-5a085.appspot.com/o/images%2F1662365196401-i6.png?alt=media&token=50dc8222-4ebf-42da-9344-931f97bac820"
 						alt="/"
 						className="w-40 -mt-8 drop-shadow-2xl"
 					/>
