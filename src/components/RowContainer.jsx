@@ -21,8 +21,8 @@ const RowContainer = ({ flag, data, scrollValue }) => {
 				data.map((item) => (
 					<div
 						key={item?.id}
-						className="w-300 min-w-[300px] md:w-340 md:min-w-[340px] h-auto my-12 p-2 bg-cardOverlay rounded-lg shadow-md 
-							backdrop-blur-lg hover:drop-shadow-lg relative"
+						className="w-275 h-[175px] min-w-[275] md:w-300 md:min-w-[300px] my-12 py-2 px-4 bg-cardOverlay rounded-lg shadow-md 
+							backdrop-blur-lg hover:drop-shadow-lg flex flex-col items-center justify-evenly relative"
 					>
 						<div className="w-full flex items-center justify-between">
 							<motion.img
@@ -34,13 +34,13 @@ const RowContainer = ({ flag, data, scrollValue }) => {
 							<motion.div
 								whileTap={{ scale: 0.75 }}
 								className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center
-								cursor-pointer hover:shadow-md "
+								cursor-pointer hover:shadow-md -mt-8"
 							>
 								<MdShoppingBasket className="text-white" />
 							</motion.div>
 						</div>
 
-						<div className="w-full flex flex-col justify-end items-end gap-4 ">
+						<div className="w-full flex flex-col justify-end items-end -mt-10">
 							<p className="text-textColor font-semibold text-base md:text-lg ">
 								{item?.title}
 							</p>
