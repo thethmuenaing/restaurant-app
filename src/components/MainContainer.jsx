@@ -7,6 +7,7 @@ import { useStateValue } from "../context/StateProvider";
 
 const MainContainer = () => {
 	const [{ foodItems }, dispatch] = useStateValue();
+
 	return (
 		<div className="w-full h-auto flex flex-col items-center justify-center">
 			<HomeMainContainer />
@@ -39,7 +40,10 @@ const MainContainer = () => {
 						</motion.div>
 					</div>
 				</div>
-				<RowContainer flag={true} data={foodItems} />
+				<RowContainer
+					flag={true}
+					data={foodItems?.filter((n) => n.category === "fruits")}
+				/>
 			</section>
 		</div>
 	);

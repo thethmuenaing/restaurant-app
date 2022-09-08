@@ -103,7 +103,7 @@ const CreateContainer = () => {
 					id: `${Date.now()}`,
 					title: title,
 					imageURL: imageAsset,
-					categort: category,
+					category: category,
 					calories: calories,
 					qty: 1,
 					price: price,
