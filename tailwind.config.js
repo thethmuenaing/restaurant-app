@@ -48,6 +48,9 @@ module.exports = {
 				cardOverlay: "rgba(256,256,256,0.4)",
 				lighttextGray: "#9ca0ab",
 				card: "rgba(256,256,256,0.8)",
+				cartBg: "#282a2c",
+				cartItem: "#2d3033",
+				cartTotal: "#343739",
 			},
 			screens: {
 				sm: "640px",
