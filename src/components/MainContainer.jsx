@@ -8,7 +8,7 @@ import MenuContainer from "./MenuContainer";
 import CartContainer from "./CartContainer";
 
 const MainContainer = () => {
-	const [{ foodItems, cartShow }, dispatch] = useStateValue();
+	const [{ foodItems, cartShow }] = useStateValue();
 
 	const [scrollValue, setScrollValue] = useState(0);
 
@@ -34,7 +34,7 @@ const MainContainer = () => {
 							whileTap={{ scale: 0.75 }}
 							className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer 
 						 hover:shadow-lg flex items-center justify-center"
-							onClick={() => setScrollValue(-300)}
+							onClick={() => setScrollValue(-400)}
 						>
 							<MdChevronLeft className="text-lg text-white" />
 						</motion.div>
@@ -42,7 +42,7 @@ const MainContainer = () => {
 							whileTap={{ scale: 0.75 }}
 							className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer duration-100 
 						transition-all ease-in-out hover:shadow-lg flex items-center justify-center"
-							onClick={() => setScrollValue(300)}
+							onClick={() => setScrollValue(400)}
 						>
 							<MdChevronRight className="text-lg text-white" />
 						</motion.div>
@@ -50,7 +50,7 @@ const MainContainer = () => {
 				</div>
 				<RowContainer
 					scrollValue={scrollValue}
-					flag={false}
+					flag={true}
 					data={foodItems?.filter((n) => n.category === "fruits")}
 				/>
 			</section>
