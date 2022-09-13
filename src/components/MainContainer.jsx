@@ -19,17 +19,17 @@ const MainContainer = () => {
 			<HomeMainContainer />
 
 			<section className="w-full my-6">
-				<div className="w-full flex items-center justify-between">
+				<div className="w-full flex items-center justify-between flex-wrap">
 					<p
-						className="text-2xl font-semibold uppercase text-headingColor relative 
-					before:absolute before:rounded-full before:context before:w-32 before:h-1 
-					before:-bottom-2 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out 
+						className="text-2xl text-center sm:text-start font-semibold uppercase text-headingColor relative 
+					before:absolute before:rounded-full before:context before:w-32 before:h-1 before:-bottom-2 sm:before:left-0 
+					before:left-[25%] before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out 
 					duration-100"
 					>
 						Our fresh & healthy fruits
 					</p>
 
-					<div className="midden md:flex gap-3 items-center">
+					<div className="hidden md:flex gap-3 items-center px-3 mt-4">
 						<motion.div
 							whileTap={{ scale: 0.75 }}
 							className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer 

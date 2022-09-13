@@ -51,6 +51,8 @@ module.exports = {
 				cartBg: "#282a2c",
 				cartItem: "#2d3033",
 				cartTotal: "#343739",
+
+				hoverColor: "rgb(231 233 237)",
 			},
 			screens: {
 				sm: "640px",
