@@ -15,15 +15,14 @@ const MainContainer = () => {
 	useEffect(() => {}, [scrollValue, cartShow]);
 
 	return (
-		<div className="w-full h-auto flex flex-col items-center justify-center">
+		<div className="w-full h-auto mb-12 flex flex-col items-center justify-center relative">
 			<HomeMainContainer />
 
-			<section className="w-full my-6">
+			<section className="w-full mt-6">
 				<div className="w-full flex items-center justify-between flex-wrap">
 					<p
-						className="text-2xl text-center sm:text-start font-semibold uppercase text-headingColor relative 
-					before:absolute before:rounded-full before:context before:w-32 before:h-1 before:-bottom-2 sm:before:left-0 
-					before:left-[25%] before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out 
+						className="text-2xl text-start font-semibold uppercase text-headingColor relative 
+					before:absolute before:rounded-full before:context before:w-32 before:h-1 before:-bottom-2 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out 
 					duration-100"
 					>
 						Our fresh & healthy fruits
@@ -33,7 +32,7 @@ const MainContainer = () => {
 						<motion.div
 							whileTap={{ scale: 0.75 }}
 							className="w-8 h-8 rounded-lg bg-orange-300 hover:bg-orange-500 cursor-pointer 
-						 hover:shadow-lg flex items-center justify-center"
+						 	hover:shadow-lg flex items-center justify-center"
 							onClick={() => setScrollValue(-400)}
 						>
 							<MdChevronLeft className="text-lg text-white" />

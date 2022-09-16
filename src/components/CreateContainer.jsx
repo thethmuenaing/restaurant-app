@@ -151,12 +151,8 @@ const CreateContainer = () => {
 	};
 
 	return (
-		<div className="w-full min-h-screen flex justify-center items-center">
-			<div
-				className="w-[90%] md:w-[75%] border border-gray-200 rounded-lg p-4
-			flex flex-col justify-center items-center gap-4
-			"
-			>
+		<div className="w-full h-full xl:h-screen pt-28 xl:pt-12 mb-12 flex justify-center items-center">
+			<div className="w-[90%] md:w-[75%] border border-gray-200 rounded-lg p-4 flex flex-col justify-center items-center gap-4">
 				{fields && (
 					<motion.p
 						initial={{ opacity: 0 }}

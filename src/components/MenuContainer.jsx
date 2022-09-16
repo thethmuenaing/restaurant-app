@@ -11,7 +11,7 @@ const MenuContainer = () => {
 	const [{ foodItems }, dispatch] = useStateValue();
 
 	return (
-		<section className="w-full my-6" id="menu">
+		<section className="w-full mb-6 pt-[100px]" id="menu">
 			<div className="w-full flex flex-col items-center justify-center">
 				<p
 					className="text-2xl font-semibold uppercase text-headingColor relative 
@@ -23,8 +23,8 @@ const MenuContainer = () => {
 				</p>
 
 				<div
-					className="w-full flex items-center justify-start lg:justify-center gap-8 py-6 overflow-scroll
-				scrollbar-none"
+					className="w-full flex items-center justify-start lg:justify-center gap-8 overflow-scroll
+				scrollbar-none mt-16"
 				>
 					{categories &&
 						categories.map((category) => (

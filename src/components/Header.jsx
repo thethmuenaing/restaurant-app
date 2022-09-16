@@ -53,6 +53,11 @@ const Header = () => {
 		});
 	};
 
+	const handleClick = (event) => {
+		const target = event.target;
+		console.log(target);
+	};
+
 	return (
 		<header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-primary border-b">
 			{/* desktop and tablet */}
@@ -71,22 +76,28 @@ const Header = () => {
 					>
 						<motion.li
 							whileTap={{ scale: 0.5 }}
+							onClick={handleClick}
 							className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer select-none"
 						>
-							<a href="#home">Home</a>
+							<a href="#home" id="1">
+								Home
+							</a>
 						</motion.li>
+
 						<motion.li
 							whileTap={{ scale: 0.5 }}
 							className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer select-none"
 						>
 							<a href="#menu">Menu</a>
 						</motion.li>
+
 						<motion.li
 							whileTap={{ scale: 0.5 }}
 							className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer select-none"
 						>
 							<a href="#home">About Us</a>
 						</motion.li>
+
 						<motion.li
 							whileTap={{ scale: 0.5 }}
 							className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer select-none"
